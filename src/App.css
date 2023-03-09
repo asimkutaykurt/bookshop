@@ -8,10 +8,11 @@
 }
 
 .App {
+  position: relative;
 }
 
 .background-color {
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(243, 243, 243);
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -21,6 +22,7 @@
 .main-container {
   max-width: 73.75rem;
   margin: 0 auto;
+  min-height: 80vh;
 }
 
 .make-ellipsis {
@@ -30,6 +32,24 @@
 }
 
 .carousel-render-container {
-  border-bottom: 1px rgb(153, 153, 153) solid;
   margin: 46px 0px;
+}
+
+.empfehlungen-titel {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(15, 73, 149);
+  text-decoration: underline;
+}
+
+.remove-button {
+  
+}
+
+.components-container {
+}
+
+.footer {
+
 }

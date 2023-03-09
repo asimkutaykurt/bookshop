@@ -6,6 +6,7 @@ import CartContext from '../CartContext';
 
 import '../../App.css';
 import CarouselComponent from '../CarouselComponent';
+import { Link } from 'react-router-dom';
 
 export default function Kinderbuecher ({
   kategorie,
@@ -90,16 +91,13 @@ export default function Kinderbuecher ({
                   return (
                     <div className="book-detail">
                       <div className='book-container'>
-                        <img
+                        <Link to={`${name}`}><img
                           className="book-cover"
                           src={bild1}
                           alt=""
-                          onClick={() =>
-                            addToCart( kategorie, unterkategorie, bild1, bild2, bild3, name, autor, preis, beschreibung, verkaufsrang, einband, erscheinungsdatum, verlag, seitenzahl, gewicht, auflage, originaltitel, uebersetzer, sprache, isbn
-                            )
-                          }
-                        />
+                        /></Link>
                       </div>
+
                       <h3 className="book-name make-ellipsis">{name}</h3>
                     </div>
                   );

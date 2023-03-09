@@ -73,7 +73,7 @@ export default function Header() {
 
         <div className="titel">
           <Link to="/" className="link">
-            <h1>Neeka</h1>
+            <h1>Boolib</h1>
           </Link>
         </div>
 
