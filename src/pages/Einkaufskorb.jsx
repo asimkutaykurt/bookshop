@@ -13,9 +13,18 @@ export default function Einkaufskorb() {
 
   const leererEinkaufskorb = items.length === 0;
 
-  const uniqueItems = bookapi.filter((item, pos) => {
-    return bookapi.indexOf(item) == pos;
-  })
+  /* const concatArrays = Object.keys(items).;
+
+  console.log(concatArrays); */
+
+  const removeDublicates = items.map(JSON.stringify);
+  console.log(removeDublicates);
+
+  const uniqueSet = new Set(removeDublicates);
+  const uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+  console.log(uniqueArray);
+
+  console.log(removeDublicates.length);
 
   return (
     <div className='Einkaufskorb'>
@@ -30,7 +39,7 @@ export default function Einkaufskorb() {
         </div>
       : 
       <div>
-        {items.map(({ kategorie, unterkategorie, bild1, bild2, bild3, name, autor, preis, beschreibung, verkaufsrang, einband, erscheinungsdatum, verlag, seitenzahl, gewicht, auflage, originaltitel, uebersetzer, sprache, isbn}) => (
+        {uniqueArray.map(({ kategorie, unterkategorie, bild1, bild2, bild3, name, autor, preis, beschreibung, verkaufsrang, einband, erscheinungsdatum, verlag, seitenzahl, gewicht, auflage, originaltitel, uebersetzer, sprache, isbn}) => (
           <div className='einkaufskorb-container'>
             <div>
               <img className='einkaufskorb-img' src={bild1} alt="" />
@@ -38,7 +47,7 @@ export default function Einkaufskorb() {
 
             <div>
               <h3>{name}</h3>
-
+              <span></span>
               <DeleteOutlineIcon className='remove-button' onClick={() => deleteItem(kategorie, unterkategorie, bild1, bild2, bild3, name, autor, preis, beschreibung, verkaufsrang, einband, erscheinungsdatum, verlag, seitenzahl, gewicht, auflage, originaltitel, uebersetzer, sprache, isbn)}/>
             </div>
           </div>
